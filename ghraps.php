@@ -52,8 +52,7 @@
  </head>
  <body>
  <center>
- <div style="height:50px";>
-<div><h4> PROFIT PENJUALAN BULAN <?php echo $bulan;?></h4></div>
+ <header><h4> PROFIT PENJUALAN BULAN <?php echo $bulan;?></h4><//header>
 <div> <label><input type='checkbox' id='checkbox' checked onclick='handleClick(this);'>Auto-Scroll</label> </div>
  <?php
 		$jumlahhari = ((abs(strtotime ($dateawal1) - strtotime ($dateakhir1)))/(60*60*24))+1;
