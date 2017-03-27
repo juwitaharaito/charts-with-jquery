@@ -1,8 +1,3 @@
-<?php
-	$odbc = odbc_connect("Driver={PostgreSQL Unicode(x64)};Server=192.168.2.10;Port=5444;Database=i4_BBC;", "admin", "");
-	$qry1 = "SELECT * FROM tbl_user";
-	$res2 = odbc_exec($odbc, $qry1);
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -19,10 +14,10 @@
 	<div class="container" style="width:900px;">  
 		<?php
 			$json = json_decode(file_get_contents("kategori3.json"));
-			?>
-			<div ><input type="text" name="newcat" id="newcat" placeholder="Enter New Category" /></div>
-			<div class="col-md-3"><input type="button" name="add" id="add" value="Add" class="btn btn-info" /> </div>
-			<div id="updatejson" style="display:none"></div>
+		?>
+		<div ><input type="text" name="newcat" id="newcat" placeholder="Enter New Category" /></div>
+		<div class="col-md-3"><input type="button" name="add" id="add" value="Add" class="btn btn-info" /> </div>
+		<div id="updatejson" style="display:none"></div>
 	</div>
 	</body>
 </html>
@@ -37,15 +32,12 @@
 							foreach($json->kategori as $mydata)
 							{ ?>
 								if (namakategori == "<?php echo $mydata->name ?>")
-								{	ada = true;
-								}
+									ada = true;
 							<?php
 							}
 							?>
 						if (ada)
-						{
 							alert ("Kategori sudah ada");
-						}
 						else
 						{
 							$.ajax({
@@ -56,17 +48,13 @@
 							{
 								$('#updatejson').html(data);
 								alert("Kategori berhasil ditambahkan");
-								window.open('tesjson.php','_self'); 
+								window.open('index.php','_self'); 
 							}
-							})
-									
+							})		
 						}
-							
 					}
 					else
 						alert("Masukkan nama kategori");
-					
 		});
     });
-
-    </script>
+</script>
